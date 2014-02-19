@@ -1,0 +1,273 @@
+body {
+	font: 13px/1.21 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+}
+
+div, span, p, a, ul, ol, li, form, fieldset, label, dd, dt, h1, h2, h3, h4, h5, h6 {
+	position: relative;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a {
+	color: #3170F0;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+.text-centered {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: right;
+}
+
+.buttons {
+	margin: auto;
+	padding: 8px 0 0;
+	text-align: center;
+}
+.buttons .pure-button:not(:first-child) {
+	margin-left: 10px;
+}
+
+.pure-button {
+	box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.pure-button .fa {
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+
+.pure-button-large {
+	font-size: 140%;
+}
+.pure-button-large .fa.icon-right {
+	font-size: 110%;
+}
+
+.pure-button-wide {
+	display: block;
+	max-width: 250px;
+	margin: 10px auto;
+}
+
+.pure-button .fa.icon-right {
+	float: right;
+	margin-right: -0.5em;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	*position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 900;
+}
+	.overlay_bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(100,100,100,0.7);
+		opacity: 0;
+	}
+	.overlay_fg {
+		position: relative;
+		/* top: -120%; */
+		-webkit-transform: translate3d(0, -120%, 0);
+		transform: translate3d(0, -120%, 0);
+		max-width: 360px;
+		margin: -3px auto 0;
+		background: #F4F4F4;
+		padding: 0;
+		border-radius: 3px;
+		box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	}
+
+
+
+html,
+body {
+	background: #FFF;
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+#app {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#loading {
+	position: fixed;
+	*position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #F4F4F4;
+	overflow: hidden;
+	text-align: center;
+	z-index: 999;
+}
+	#loading img {
+		padding: 50px 0 0;
+	}
+body.loaded #loading {
+	display: none;
+}
+
+#view {
+	position: relative;
+	height: 100%;
+	overflow: visible;
+}
+
+#module_auth h3 {
+	float: left;
+	margin: 0;
+	left: 5px;
+	top: 5px;
+	padding: 5px 0 0 5px;
+	color: #AAA;
+	font-size: 120%;
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	-webkit-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+}
+	#module_auth .explainer,
+	#module_auth .tagline {
+		min-width: 120px;
+		margin: 0;
+		padding: 10px 20px 0;
+		text-align: right;
+		color: #999;
+	}
+	#module_auth .tagline {
+		text-align: left;
+		font-size: 85%;
+		font-style: italic;
+	}
+		#module_auth .tagline a,
+		#module_auth .explainer a {
+			color: #9CF;
+		}
+	#module_auth form {
+		clear: both;
+		padding: 15px;
+	}
+	#module_auth label {
+		color: #777;
+	}
+
+
+
+
+
+
+#notifications {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: auto;
+	overflow: visible;
+}
+#notifications_inner {
+	position: relative;
+	height: auto;
+	padding: 0;
+	background: none;
+	overflow: hidden;
+}
+.notifications_base {
+	padding: 10px;
+	overflow: hidden;
+}
+
+.notification {
+	margin: 0 0 5px;
+	padding: 0;
+	opacity: 0.85;
+	z-index: 990;
+	
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: 0 1px 7px #000;
+	
+	overflow: hidden;
+}
+.notification_top {
+	/* height: 12px; */
+}
+.notification_inner {
+	padding: 10px;
+	background: #353535;
+	background: -moz-linear-gradient( top, #444, #303030 );
+	background: -webkit-gradient( linear, left top, left bottom, color-stop( 0, #444 ), color-stop( 1, #303030 ) );
+	border: 1px solid #777;
+	
+	color: #DDD;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+	
+	border-radius: 4px;
+	
+	overflow: hidden;
+}
+.notification_message {
+	overflow: hidden;
+}
+.notification_closeButton {
+	position: absolute;
+	right: 0;
+	top: -5px;
+	width: 24px;
+	height: 20px;
+	margin: 0;
+	padding: 4px 0 0;
+	background: none;
+	text-align: center;
+	font-size: 115%;
+	font-weight: bold;
+	color: #888;
+	cursor: pointer;
+}
+.notification_closeButton:hover {
+	color: #FFF;
+}
+.notification_closeButton .label {
+	display: inline;
+}
+
+div.notification_message {
+	display: block;
+	min-height: 1.3em;
+	margin: 0 0 0 34px;
+}
+.notification img {
+	position: absolute;
+	left: 4px;
+	top: 8px;
+	max-width: 32px;
+	max-height: 32px;
+}

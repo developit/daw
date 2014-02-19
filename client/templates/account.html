@@ -1,0 +1,45 @@
+<div id="accountBase" class="view">
+	
+	<form id="accountSettings" class="pure-form pure-form-aligned" novalidate action="javascript:;">
+		<legend>Account Settings</legend>
+
+		<div class="errorMessage"></div>
+		
+		<div class="pure-control-group textual">
+			<label for="account_companyname">Company Name:</label>
+			<input id="account_companyname" name="companyname" type="text" />
+		</div>
+		
+		<div class="pure-control-group textual">
+			<label for="account_address_street">Street Address:</label>
+			<input id="account_address_street" name="address_street" type="text" />
+		</div>
+		
+		<div class="pure-control-group textual">
+			<label for="account_address_city">City:</label>
+			<input id="account_address_city" name="address_city" type="text" />
+		</div>
+		
+		<div class="pure-control-group select">
+			<label for="account_address_state">State:</label>
+			<select id="account_address_state" name="address_state" data-source="app.models.states">
+			</select>
+		</div>
+		
+		<div class="pure-control-group textual">
+			<label for="account_phone">Phone Number:</label>
+			<input id="account_phone" name="phone" type="text" />
+		</div>
+		
+		<div class="buttons text-centered">
+			<a class="cancel pure-button">
+				<i class="fa fa-times"></i>
+				Reset
+			</a>
+			<a class="submit pure-button pure-button-primary">
+				<i class="fa fa-check"></i>
+				Save
+			</a>
+		</div>
+	</form>
+</div>

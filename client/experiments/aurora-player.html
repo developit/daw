@@ -1,0 +1,53 @@
+<!-- Original:  https://github.com/audiocogs/aurora.js/blob/master/src/test.html  -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script src="../js/lib/aurora/AV.js"></script>
+		<script src="../js/lib/aurora/MP3Decoder.js"></script>
+		
+		<input class="open" type="file" />
+		
+		<div class="player">
+			<input class="pan" type="range" min="-50" max="50" value="0" />
+			<img id="art" />
+		</div>
+		
+		<pre class="meta"></pre>
+		
+		<script>
+			var $ = document.querySelector.bind(document),
+				player = null;
+			
+			$("input.pan").addEventListener('input', function(e) {
+				if (player) {
+					player.pan = +e.target.value;
+				}
+			});
+			
+			$("input.open").addEventListener('change', function(e) {
+				if (player) {
+					player.stop();
+				}
+				
+				player = AV.Player.fromFile(e.target.files[0]);
+				console.log(player);
+				
+				player.on('error', function(e) {
+					throw e;
+				});
+				
+				player.on('metadata', function(data) {
+					//console.log(data);
+					$('.meta').textContent = JSON.stringify(data, null, '  ');
+					
+					$("#art").src = data.coverArt && data.coverArt.toBlobURL() || '';
+				});
+				
+				player.play();
+			});
+		</script>
+	</body>
+</html>
